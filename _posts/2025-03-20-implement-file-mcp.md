@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 模型上下文协议动手实验（Model Context Protocol）
+title: 模型上下文协议(MCP-Model Context Protocol)详解与实践 - 动手实验
 date: 2025-03-20 11:06 +0800
 categories:
   - 技术
@@ -10,21 +10,24 @@ tags:
   - MCP
 toc: true
 comments: true
+description: 深入解析模型上下文协议(MCP)的工作原理、架构设计与实现方法，包含Java与Python示例代码，帮助开发者快速理解并应用这一AI工具标准化集成方案。
+image: /resources/2_mcp_overview.png
+keywords: 模型上下文协议, MCP, AI工具集成, 大模型, LLM, 工具调用, JSON-RPC, SSE, 双向通信
 ---
 
-# 介绍
+## 模型上下文协议(MCP)详解与实践
 
-## 官方文档
+### 官方文档
 [官方开发者首页](https://modelcontextprotocol.io/introduction)  
 [中文版](https://docs.modelcontextprotocol.vip/introduction)  
-模型上下文协议（MCP） 就像是为AI模型量身定制的“USB-C接口”，可以标准化地连接AI系统与各类外部工具和数据源。
+模型上下文协议（MCP） 就像是为AI模型量身定制的"USB-C接口"，可以标准化地连接AI系统与各类外部工具和数据源。
 
-## 架构图
-![MCP architecture](../resources/2_mcp_overview.png)
+### 架构图
+![MCP架构概览图 - 模型上下文协议的核心组件与交互流程](/resources/2_mcp_overview.png)
 
-## MCP 核心概念
+### MCP 核心概念
 
-## 市面上的client产品
+#### 市面上的client产品
 在介绍核心概念之前，可以看一下截止25年3月的各大Client对于MCP功能不同维度的支持情况，如果你用过其中的一些会有一个更清晰的认知:  
 
 | Client | Resources | Prompts | Tools | Sampling | Roots | Notes                                                              |
@@ -52,7 +55,7 @@ comments: true
 | OpenSumi | ❌ | ❌ | ✅ | ❌ | ❌ | Supports tools in OpenSumi                                         |
 | Daydreams Agents | ✅ | ✅ | ✅ | ❌ | ❌ | Support for drop in Servers to Daydreams agents                    |
 
-## 核心概念
+#### 核心概念
 
 MCP官方文档设计了6大核心概念：
 1. 资源Resources
@@ -62,23 +65,23 @@ MCP官方文档设计了6大核心概念：
 5. 根节点Roots
 6. 传输Transports
 
-从这几个核心概念可以看出Anthropic的设计哲学是希望把大模型推理过程中涉及到的所有可能的元素都解藕到mcp-server中, 包括提示词和沙箱。这样客户端只要关注高效“链接”，对Host搞定inference，对server搞定Agent。  
+从这几个核心概念可以看出Anthropic的设计哲学是希望把大模型推理过程中涉及到的所有可能的元素都解藕到mcp-server中, 包括提示词和沙箱。这样客户端只要关注高效"链接"，对Host搞定inference，对server搞定Agent。  
 
 
-但从上面的“开服玩家”来看，cursor、windsurf 2大巨头还是选择只支持Tools，这一方面体现了MCP本质还是FunctionCall再更底层layer的延伸，另一方面也说明了出于商业角度的考虑各个玩家还是希望集中式管理自己的提示词和逻辑，能不能被hack出提示词是一回事，提示词和逻辑是他们的核心资产是另一回事。  
+但从上面的"开服玩家"来看，cursor、windsurf 2大巨头还是选择只支持Tools，这一方面体现了MCP本质还是FunctionCall再更底层layer的延伸，另一方面也说明了出于商业角度的考虑各个玩家还是希望集中式管理自己的提示词和逻辑，能不能被hack出提示词是一回事，提示词和逻辑是他们的核心资产是另一回事。  
 
 
 加上Resources本质上也是透过Tools去获取的，因此本文不去细究每一种概念的使用，感兴趣的可以自行阅读原文档，本文聚焦解释**MCP的Tools**具体技术实现原理，帮助读者理解MCP如何能够work
 
-# Tools how to work
+## how MCP Tools work
 
 
-## 全双工通信
+### 全双工通信
 
 对MCP感兴趣的人大多数看过下面这张图，可以看到每个MCP Server对Client之间都是一个双向箭头，它意味着什么?
-![mcp关键组件](../resources/2_mcp_arch.webp)
+![MCP关键组件与通信流程图 - 展示客户端与服务端之间的双向通信机制](/resources/2_mcp_arch.webp)
 
-## endpoint list
+### endpoint list
 弄清楚这个双向箭头就基本上能理解MCP的架构设计哲学了，我们先来看官方Java-SDK的endpoint定义:（另，官方的Java SDK看文档提到貌似是SpringAI的那帮人贡献的，SpringAI本身有点一言难尽，但MCP SDK写的真的非常优雅感兴趣的可以去看一下[Java-SDK](https://github.com/modelcontextprotocol/java-sdk)）
 
 ```java
@@ -117,7 +120,7 @@ MCP官方文档设计了6大核心概念：
 	public static final String METHOD_SAMPLING_CREATE_MESSAGE = "sampling/createMessage"; 
 ```
 
-## 消息结构
+### MCP消息结构与通信协议
 MCP在API层选择了[json-rpc 2.0协议](https://www.jsonrpc.org/specification), 以tool_list功能举例数据结构类似这样:
 ```json
 {
@@ -128,17 +131,23 @@ MCP在API层选择了[json-rpc 2.0协议](https://www.jsonrpc.org/specification)
 }
 ```
 
-## 参考官方SDK实现双向通信
+### 参考官方SDK实现双向通信
 
-mcp是如何实现双向通信的？mcp实际上有stdio和sse2种实现模式，考虑到remote server是事实上的绝大多数场景，本章节着重讲sse版本， mcp通过维护1个sse接口和1个restful接口来实现C/S架构的双向通信(吐槽一下这样都不用websocket,sse真是大模型的亲儿子)
-1. 服务端需要实现2个接口，以默认的/sse和/mcp/message为例，/sse的接口是为了服务端给客户端去推消息，/mcp/message接口是用来客户端去调服务端发送命令的
-2. 这套设计很反直觉，当你开发server端的时候，当你收到/mcp/message的请求的时候你实际上只要保证“处理逻辑能正确分发”就可以返回200，不需要返回任何处理结果。同时你要把处理的结果通过/sse接口异步的通知给客户端，因此这里的session保持客观上增加了系统的复杂度。
-3. 流程如下：
+MCP是如何实现双向通信的？MCP实际上有stdio和SSE两种实现模式，考虑到remote server是事实上的绝大多数场景，本章节着重讲SSE版本。MCP通过维护1个SSE接口和1个RESTful接口来实现C/S架构的双向通信(吐槽一下这样都不用WebSocket，SSE真是大模型的亲儿子)：
+
+1. 服务端需要实现2个接口，以默认的/sse和/mcp/message为例：
+   - `/sse`接口是为了服务端给客户端去推消息
+   - `/mcp/message`接口是用来客户端去调服务端发送命令的
+
+2. 这套设计很反直觉，当你开发server端的时候，当你收到/mcp/message的请求的时候你实际上只要保证"处理逻辑能正确分发"就可以返回200，不需要返回任何处理结果。同时你要把处理的结果通过/sse接口异步的通知给客户端，因此这里的session保持客观上增加了系统的复杂度。
+
+3. 完整通信流程如下：
    1. 客户端调用/sse接口拿到endpoint（即前文提到的/mcp/message，实际上由server端自己定），/sse接口理论上只要client端不主动发close server端就应当永久保持
    2. 拿到endpoint接口之后客户端就可以通过这个接口去请求初始化、serverInfo和toolList等接口获取server端能提供哪些能力
    3. 服务端正确分发异步的处理逻辑之后返回空body的200
    4. 服务端处理完成之后通过/sse接口异步推送JsonRpcResponse
-4. 官方的python demo很好的说明了这个过程可以看以下代码：
+
+4. 官方的python demo很好的说明了这个过程，可以看以下代码：
 ```python
 # 步骤1～4的python实现
 async def connect_to_server(self, server_script_path: str):
@@ -241,7 +250,7 @@ async def process_query(self, query: str) -> str:
     return "\n".join(final_text)
 ```
 
-## lab
+### lab
 我们以cursor为例看一下如果我们开发一个FileTools的MCP绑定到cursor上实际上发生了哪些交互： 
 - 在cursor上配置sse的端口:  
 ![cursor配置](../resources/2_mcp_cursor_init_client.jpg)
@@ -250,7 +259,7 @@ async def process_query(self, query: str) -> str:
   - 当用户问本地文件相关的问题时再调tool/call
   ![mcp server收到的请求](../resources/2_mcp_cursor_init_server.jpg)
 
-### server demo
+#### server demo
 ```java
 //server
 package io.modelcontextprotocol.configs;
@@ -308,7 +317,9 @@ class McpConfig {
 }
 ```
 
-### client demo 
+#### MCP客户端实现示例
+以下是一个基于Java的MCP客户端实现示例，用于连接MCP服务端并调用工具：
+
 ```java
 //client
 package io.modelcontextprotocol.clients;
@@ -372,7 +383,7 @@ public class MyClient {
 }
 ```
 
-### client收到的推送
+#### client收到的推送
 ```text
 接收到消息: JSONRPCResponse[jsonrpc=2.0, id=dace1e50-8f8f-4842-8ffe-0f161370bf90, result={tools=[{name=read_file, description=Read the contents of a file from the local filesystem, inputSchema={type=object, properties={filePath={type=string, description=The absolute path to the file to read}}, required=[filePath]}}, {name=list_directory, description=List the contents of a directory from the local filesystem, inputSchema={type=object, properties={directoryPath={type=string, description=The absolute path to the directory to list}}, required=[directoryPath]}}]}, error=null]
 响应 ID: dace1e50-8f8f-4842-8ffe-0f161370bf90
@@ -380,7 +391,7 @@ public class MyClient {
 
 ```
 
-# 总结
+## 总结
 MCP 是一个基于 JSON-RPC 2.0 的协议，用于 AI 模型与外部工具和资源的交互。它采用客户端-服务器架构，通过传输层（如 SSE）进行通信。客户端发送请求，服务器处理请求并提供工具和资源访问。整个协议设计灵活，支持多种传输方式和同步/异步处理模式，适用于各种 AI 应用场景。MCP的server需要实现2个接口，1个sse的接口负责向客户端推送各种response，1个restful的POST接口用于接受客户端的各种命令
 
 完整demo代码：  

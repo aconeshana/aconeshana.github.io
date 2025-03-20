@@ -9,6 +9,9 @@ tags:
   - llm
 toc: true
 comments: true
+description: 全面解析大语言模型(LLM)的核心概念、Transformer架构、训练技术与优化方法，帮助开发者深入理解LLM的工作原理与实现细节。
+image: /resources/0_Transformer_src_trg.png
+keywords: 大语言模型, LLM, Transformer, 自注意力机制, 模型训练, 模型推理, 量化技术, 参数高效微调
 ---
 
 ## Transformer
