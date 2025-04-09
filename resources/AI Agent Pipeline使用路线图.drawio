@@ -1,9 +1,204 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.2.3">
   <diagram name="第 1 页" id="xG7lVyR-kHMM1k3yD0h3">
-    <mxGraphModel>
+    <mxGraphModel dx="1484" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-62" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="20" width="1520" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-31" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="52.5" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="50" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="130" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-3" value="输入层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="233" y="60" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-6" value="自然语言输入" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="100" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-7" value="可视化配置" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="142.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="732" y="52.5" width="260" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-9" value="Prompt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="832" y="62.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-10" value="提示词冷启动" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="754" y="102.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-11" value="提示词suggestion" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="754" y="140" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-12" value="大模型方言" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="884" y="102.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-13" value="版本管理" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="884" y="140" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-14" value="人群/品类&lt;br&gt;拖拉拽" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="180" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-19" value="提示词调试&lt;div&gt;优化打分&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="754" y="180" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-20" value="提示词自迭代" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="884" y="180" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-21" value="场景化模板" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="754" y="217.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-22" value="个性化参数" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="884" y="217.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-23" value="提示词优解平台" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="819" y="307.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-25" value="AI友好的数据湖" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="490" y="60" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-27" value="toB=》workflow" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="206" y="285" width="118" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-28" value="toC=》Chat/Agent" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="206" y="340" width="118" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-29" value="ONEMeta" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="502" y="285" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-30" value="XQL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="502" y="330" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-32" value="AI友好的工具" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1115" y="60" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-33" value="工具MCP化&lt;div&gt;SaaS/RPC/HTTP&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="90" width="170" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-34" value="TTS/ASR" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="135" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-35" value="声音/专辑" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="180" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-36" value="搜索" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="225" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-39" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="52.5" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-40" value="模型" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1445" y="60" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-41" value="画像" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="90" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-42" value="行为数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="558" y="90" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-43" value="用户画像" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="137.5" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-44" value="专辑画像" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="177.5" width="110" height="32.5" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-45" value="……" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="240" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-46" value="声音画像" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="216.25" width="110" height="32.5" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-47" value="收听" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="558" y="137.5" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-48" value="搜索" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="558" y="176.25" width="110" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-49" value="购买" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="558" y="216.25" width="110" height="33.75" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-50" value="……" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="588" y="240" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-51" value="蒸馏" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="92.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-52" value="SFT" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="140" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-53" value="RL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="190" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-54" value="量化" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="92.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-55" value="推理加速" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="141.25" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-57" value="MCP Store&lt;div&gt;枢纽/协议转换&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="135" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-58" value="注册发现" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="180" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-59" value="语义化文档" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="225" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-60" value="MCP平台" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="307.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-61" value="训练推理框架" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1427" y="307.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="EoaujWqOFIEsK2N1c3v0-63" target="EoaujWqOFIEsK2N1c3v0-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1880" y="163" />
+              <mxPoint x="1880" y="430" />
+              <mxPoint x="390" y="430" />
+              <mxPoint x="390" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-74" value="自进化/自迭代" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EoaujWqOFIEsK2N1c3v0-73">
+          <mxGeometry x="0.0317" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-63" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1630" y="52.5" width="230" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-64" value="Eval-as-a-Service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1690" y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-65" value="测试集" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1652" y="141.25" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-66" value="A/B" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1762" y="141.25" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-67" value="效果&lt;div&gt;DAU3/留存&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1763" y="193.75" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-68" value="准召率" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1652" y="193.75" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-70" value="模型评测" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1652" y="92.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-71" value="业务效果评测" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1762" y="92.5" width="86" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="EoaujWqOFIEsK2N1c3v0-75" value="评测平台" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1707" y="305" width="86" height="35" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
